@@ -29,9 +29,6 @@ services:
     depends_on:
       - postgres
     command: start-dev
-    volumes:
-      # Mount your built JAR theme here 👇
-      - ./target/keycloak-theme-for-kc-22-to-25.jar:/opt/keycloak/providers/keycloak-theme-for-kc-22-to-25.jar
 
 volumes:
   postgres_data:
