@@ -1,4 +1,4 @@
-version: "3.9"
+version: "4.2"
 
 services:
   postgres:
@@ -29,6 +29,11 @@ services:
     depends_on:
       - postgres
     command: start-dev
+    volumes:
+      # Mount theme JAR
+      - ./target/keycloak-theme-for-kc-22-to-25.jar:/opt/keycloak/providers/keycloak-theme-for-kc-22-to-25.jar
+      # Mount Email OTP authenticator JAR
+      - ./target/emailauth-0.0.1-SNAPSHOT.jar:/opt/keycloak/providers/emailauth-0.0.1-SNAPSHOT.jar
 
 volumes:
   postgres_data:
